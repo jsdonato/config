@@ -1,11 +1,29 @@
 syntax on
+set re=2
 set hlsearch
 match ErrorMsg '\s\+$'
 set expandtab
 set cursorline
 set cursorcolumn
 set nocompatible
+set viminfo='100,<1000,s100,h
+set incsearch
+set mouse -=a
 filetype off
+
+" colorscheme
+let g:gruvbox_italics=0
+let g:gruvbox_italicize_strings=0
+colorscheme gruvbox8_hard
+set background=dark
+
+" status line
+set laststatus=2
+set statusline=
+set statusline+=\ %F
+set statusline+=%=
+set statusline+=\ %p%%
+set statusline+=\ %l:%-2c
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -16,20 +34,8 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-"" FOR LIGHTLINE
-set laststatus=2
-set noshowmode
-let g:lightline = {
-        \ 'colorscheme': 'gruvbox',
-        \'active' : {
-        \  'right' : [['lineinfo'], ['percent']]
-        \ },
-        \ }
-""
+""""""""NON-DEFAULT PLUGINS HERE"""""""""
 
-"""""""""""""""""""""" NON-DEFAULT PLUGINS
-Plugin 'morhetz/gruvbox'
-Plugin 'itchyny/lightline.vim'
 """"""""""""""""""""""""""""""""""""""""""
 
 " All of your Plugins must be added before the following line
@@ -47,9 +53,3 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-let g:gruvbox_termcolor=256
-let g:gruvbox_contrast_dark='hard'
-set background=dark
-colorscheme gruvbox
-autocmd vimenter * nested colorscheme gruvbox
-set mouse -=a
