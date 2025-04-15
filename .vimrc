@@ -12,10 +12,13 @@ set mouse -=a
 filetype off
 
 " colorscheme
-let g:gruvbox_italics=0
-let g:gruvbox_italicize_strings=0
-colorscheme gruvbox8_hard
 set background=dark
+let g:gruvbox_termcolor=256
+let g:gruvbox_contrast_dark='hard'
+let g:gruvbox_italic=0
+let g:gruvbox_italicize_comments=0
+let g:gruvbox_italicize_strings=0
+colorscheme gruvbox
 
 " status line
 set laststatus=2
